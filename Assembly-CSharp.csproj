@@ -59,7 +59,6 @@
     <Compile Include="Assets\Scripts\PlayerSpawner.cs" />
     <Compile Include="Assets\Scripts\WallSpawner.cs" />
     <Compile Include="Assets\Scripts\Node.cs" />
-    <Compile Include="Assets\Scripts\RayChecker.cs" />
     <Compile Include="Assets\Scripts\RayCheckerTwo.cs" />
     <Compile Include="Assets\Scripts\HexagonSpawner.cs" />
   </ItemGroup>

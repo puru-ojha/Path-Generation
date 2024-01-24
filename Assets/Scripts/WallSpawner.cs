@@ -28,34 +28,20 @@ public class WallSpawner : MonoBehaviour
     }
     void WallGenerator()
     {
-        //Hexagon has to be spawned
-        //hexagonSpawner.SpawnHexagon();
         wallcount = wallcount + 1;
         int rotationchosen = rayChecker.rotationChosen;
-
         Vector3 wallsLocation = rayChecker.center + Quaternion.Euler(new Vector3(0, rayChecker.playerDirection.y + rotationchosen, 0)) * Vector3.forward * (rayChecker.hexLength);
         Vector3 wallsDirection = new Vector3(0, rayChecker.playerDirection.y + rotationchosen,0);
         GameObject currentWall =  Instantiate(wall, wallsLocation, Quaternion.Euler( wallsDirection));
         wallQueue.Enqueue(currentWall);
         DestroyWall();
-        //NewPlayerPosition(wallsLocation, wallsDirection);
     }
-    /*
-    void NewPlayerPosition(Vector3 wallsPos, Vector3 wallsDir)
-    {
-        Vector3 path = new Vector3(0, 0, rayChecker.pathlen);
-        path = Quaternion.Euler(wallsDir) * path;
-        rayChecker.playpos = wallsPos + path;
-        rayChecker.playdir = wallsDir;
-    }
-    */
+
     void DestroyWall()
     {
-        //wallcount = wallcount + 1;
-        //Debug.Log("The wall count is " + wallcount);
         if (wallcount > 2)
         {
-            Debug.Log("One wall should go ");
+            //Debug.Log("One wall should go ");
             Destroy(wallQueue.Dequeue());
             wallcount --;
         }

@@ -21,11 +21,6 @@ public class PlayerSpawner : MonoBehaviour
         SpawnPlayer();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void SpawnPlayer()
     {
         playerPosition = new Vector3(Random.Range(-55f, 55f), 0, Random.Range(-55f, 55f));
