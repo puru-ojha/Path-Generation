@@ -8,7 +8,8 @@ public class RayCheckerTwo : MonoBehaviour
   
     public Vector3 playerPosition;
     public Vector3 playerDirection;
-    int wallLength = 20;
+    int wallLength = 0; // Initial wall length was 20. Taken as zero so that no walls are being spawned
+    //int wallLength = 20;
     int wallWidth = 8;
     int[] degreeIndex = new int[5] { -120, -60, 0, 60, 120 };
     Vector3 currentPlayerPosition;
@@ -16,6 +17,7 @@ public class RayCheckerTwo : MonoBehaviour
     public Vector3 center;
     public float hexLength;
     public float raylength;
+    
     public int indexChosen;
     public int rotationChosen;
     void Start()
@@ -93,20 +95,35 @@ public class RayCheckerTwo : MonoBehaviour
         }
         Debug.Log("Checking loop completed");
         //root.Print_tree();
-        Node chosenFirst;
+        //Node chosenFirst;
+        List<int> indexChosenList = new List<int>();
         if (thirdDegree.Count == 0)
         {
             Debug.Log("There were no more third children of this chosen node so we take second children and hope it works");
-            Node chosenSecond = secondDegree[Random.Range(0, secondDegree.Count)];
-            chosenFirst = chosenSecond.parent;
+            foreach (Node element in secondDegree)
+            {
+                indexChosenList.Add(element.parent.data);
+            }
         }
         else
         {
-            Node chosenThird = thirdDegree[Random.Range(0, thirdDegree.Count)];
-            chosenFirst = chosenThird.parent.parent;
+            foreach(Node element in thirdDegree)
+            {
+                indexChosenList.Add(element.parent.parent.data);
+            }
+            //Node chosenThird = thirdDegree[Random.Range(0, thirdDegree.Count)];
+            //chosenFirst = chosenThird.parent.parent;
         }
-        indexChosen = chosenFirst.data;
-        rotationChosen = degreeIndex[indexChosen];
+        //indexChosen = chosenFirst.data;
+        if (indexChosenList.Contains(2))
+        {
+            indexChosen = 2;
+        }
+        else
+        {
+            indexChosen = indexChosenList[Random.Range(0, indexChosenList.Count)];
+            rotationChosen = degreeIndex[indexChosen];
+        }
         //root.parent_jump(indexChosen);
         Debug.Log("The chosen index is " + indexChosen);
 

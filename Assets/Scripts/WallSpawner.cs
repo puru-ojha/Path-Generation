@@ -21,7 +21,7 @@ public class WallSpawner : MonoBehaviour
     void Update()
     {
         //Debug.Log("Press x for wall generation ");
-        if (Input.GetKeyDown(KeyCode.X))
+        //if (Input.GetKeyDown(KeyCode.X))
         {
             Driver();
         }
@@ -51,7 +51,7 @@ public class WallSpawner : MonoBehaviour
     {
         rayChecker.mainFunction();
         hexagonSpawner.SpawnHexagon();
-        WallGenerator();
+        //WallGenerator();
         rayChecker.MoveForward();
 
     }

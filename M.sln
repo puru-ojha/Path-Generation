@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{E1080C41-B4E9-00CD-B59B-90866EC16640}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.XR.Interaction.Toolkit.Samples.StarterAssets", "Unity.XR.Interaction.Toolkit.Samples.StarterAssets.csproj", "{693599A8-D129-45D8-47E1-0F27AFCA2B75}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{E1080C41-B4E9-00CD-B59B-90866EC16640}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E1080C41-B4E9-00CD-B59B-90866EC16640}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E1080C41-B4E9-00CD-B59B-90866EC16640}.Release|Any CPU.Build.0 = Release|Any CPU
+		{693599A8-D129-45D8-47E1-0F27AFCA2B75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{693599A8-D129-45D8-47E1-0F27AFCA2B75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{693599A8-D129-45D8-47E1-0F27AFCA2B75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{693599A8-D129-45D8-47E1-0F27AFCA2B75}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

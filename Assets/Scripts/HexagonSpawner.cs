@@ -35,7 +35,7 @@ public class HexagonSpawner : MonoBehaviour
     }
     void DestroyHexagon()
     {
-        if (count >2)
+        if (count >6)
         {
             //Debug.Log("One hexagon should go ");
             Destroy(hexagonQueue.Dequeue());
