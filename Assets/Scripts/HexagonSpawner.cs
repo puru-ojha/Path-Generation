@@ -23,29 +23,10 @@ public class HexagonSpawner : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    /*
-    int GetRandomRayIndex()
-    {
-        
-        int index = raychecker.noHitRayIndex.Count;
-        //Debug.Log("The total number of rays not hitting is " + index);
-        randomIndex = Random.Range(0, index);
-        return raychecker.noHitRayIndex[randomIndex];
-    }
-    */
-
     public void SpawnHexagon()
     {
         count = count + 1;
-        //Doing the ray check
-        //raychecker.CheckForRays();
         hexagonIndex = raychecker.indexChosen;
-        //Debug.Log("The hexagonIndex is " + hexagonIndex);
         hexagonPosition = raychecker.playerPosition;
         hexagonDirection = raychecker.playerDirection;
         GameObject currentHexagon = Instantiate(hexagonPrefabs[hexagonIndex], hexagonPosition, Quaternion.Euler(hexagonDirection));
@@ -54,11 +35,9 @@ public class HexagonSpawner : MonoBehaviour
     }
     void DestroyHexagon()
     {
-        //count = count + 1;
-        //Debug.Log("The hexagon count is " + count);
         if (count >2)
         {
-            Debug.Log("One hexagon should go ");
+            //Debug.Log("One hexagon should go ");
             Destroy(hexagonQueue.Dequeue());
             count --;
         }

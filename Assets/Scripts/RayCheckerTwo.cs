@@ -10,7 +10,7 @@ public class RayCheckerTwo : MonoBehaviour
     public Vector3 playerDirection;
     int wallLength = 20;
     int wallWidth = 8;
-    public int[] degreeIndex = new int[5] { -120, -60, 0, 60, 120 };
+    int[] degreeIndex = new int[5] { -120, -60, 0, 60, 120 };
     Vector3 currentPlayerPosition;
     Vector3 currentPlayerDirection;
     public Vector3 center;
@@ -35,8 +35,6 @@ public class RayCheckerTwo : MonoBehaviour
         //PlayerDirection is rotation around y axis so center will be playerPosition + quaternion.eular(playerDirection)*vector3.forward*hexLength
         Vector3 currentCenter = currentPlayerPosition + Quaternion.Euler(currentPlayerDirection) * Vector3.forward * hexLength;
         Vector3 direction = Quaternion.Euler(new Vector3(0, currentPlayerDirection.y + degreeIndex[index], 0)) * Vector3.forward;
-        //currentPlayerPosition = center + Quaternion.Euler(new Vector3(0, currentPlayerDirection.y + degreeIndex[index], 0)) * Vector3.forward * (wallLength + 2 * hexLength);
-        //currentPlayerDirection = currentPlayerDirection + Vector3.up * degreeIndex[index];
         Debug.DrawRay (currentCenter, direction* raylength);
         return !Physics.Raycast(currentCenter, direction,raylength);
     }
